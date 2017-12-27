@@ -1,0 +1,272 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Varela Round', sans-serif;
+	line-height: 1.6;
+	color: #3a3a3a;
+}
+
+p {
+	font-size: .95em;
+	margin-bottom: 1.8em;
+}
+
+h2,
+h3,
+a {
+	color: #093a58;
+}
+
+h2,
+h3 {
+	margin-top: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+/** Create caption and position at bottom of image **/
+figure {
+	margin: 0;
+	line-height: 0;
+	position: relative;
+}
+
+figcaption {
+	font-size: .9em;
+	line-height: 1.5;
+	color: #fff;
+	padding: 1em;
+	background: rgba(19,43,102, .85);
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation ---- */
+
+.name {
+	font-size: 1.25em;
+}
+
+.name a,
+.main-nav a {
+	text-align: center;
+}
+
+.main-nav a {
+	font-size: .95em;
+	color: #3acec2;
+	text-transform: uppercase;
+}
+
+.main-nav a:hover {
+	color: #093a58;
+}
+
+.headline {
+	margin-bottom: 0;
+}
+
+/* ---- Layout Containers ---- */
+
+.banner {
+	color: #fff;
+	background: #3acec2;
+}
+
+.main-footer {
+	background: #d9e4ea;
+	padding: 2em 0;
+	margin-top: 30px;
+}
+
+/* ---- Page Elements ---- */
+
+.logo {
+	width: 190px;
+}
+
+/** Resize and move location icon **/
+.icon-location {
+	width: 35px;
+	position: absolute;
+	right: -15px;
+	top: -15px;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+@media (min-width: 300px) {
+
+
+
+	/* ---- Float clearfix ---- */
+
+	.clearfix::after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+
+	/** Make name and nav display as stack **/
+	.name,
+	.main-nav {
+		display: block;
+		text-align: center;
+	}
+
+	/** Give more space to nav buttons amd their clickable area**/
+	.main-nav li,
+	.main-nav a{
+		padding: 10px 15px 10px 15px;
+	}
+
+	.main-nav li{
+		margin-top: .5em;
+	}
+
+	/** Center logo **/
+	.logo {
+		display: block;
+		width: 100%;
+		height: 192px;
+		padding: 15px 0 15px 0;
+	}
+
+	/** Increase banner height/spacing **/
+	.banner{
+		padding: 3em;
+		margin-bottom: 50px;
+	}
+
+	/** Center text and stack head/tag **/
+	.headline,
+	.tagline {
+		text-align: center;
+		display: block;
+		margin: 0;
+	}
+
+	/** Add white space around colums **/
+	.col {
+		padding: 0 1em;
+	}
+	
+	/** Center text in footer **/
+	.main-footer {
+		text-align: center;
+	}
+}
+
+@media (min-width: 760px) {
+
+    /** Create fixed header and force body to clear. z-index puts on top of other elements **/
+	body{
+		padding-top: 60px;
+	}
+
+	.main-header {
+		position: fixed;
+		background-color: white;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, .4);
+		width: 100%;
+		top: 0;
+		z-index: 10;
+	}
+
+	/** Convert header from stack to inline **/
+	.name {
+		text-align: center;
+		float: left;
+		margin-left: 1000em;
+	}
+	.main-nav {
+		float: right;
+	}
+
+	.main-nav li {
+		display: inline-block;
+	}
+
+	/** Increase space around head/tag lines **/
+	.headline,
+	.tagline {
+		padding: 5px;
+	}
+
+	.tagline {
+		font-size: 1.5em;
+	}
+
+	/** Set % of screen for content, set max width and margins **/
+	.content{
+		width: 85%;
+		max-width: 1300px;
+		margin: 0 auto;
+	}
+
+	/** Begin 2 column layout **/
+	.primary,
+	.secondary {
+		width: 50%;
+		display: inline-block;
+		margin-right: -5px;
+		vertical-align: top;
+	}
+}
+
+@media (min-width: 959px) {
+
+	/** Increase width of primary/ decrease others **/
+	.name {
+		margin-left: 3em;
+	}
+	.primary {
+		width: 40%;
+	}
+
+	.secondary,
+	.tertiary {
+		width: 30%;
+		display: inline-block;
+	}
+}
+
+/** This section is purely for adjusting name position relative to articles **/
+@media (min-width: 1200px) {
+
+	.name {
+		margin-left: 5em;
+	}
+}
+
+@media (min-width: 1600px) {
+
+	.name {
+		margin-left: 9em;
+	}
+}
+
+
+@media (min-width: 1900px) {
+	.name {
+		margin-left: 15em;
+	}
+}
